@@ -10,5 +10,5 @@ template目录说明:
 	log：实例的日志目录
 	temp：实例的临时目录，作用不明
 	webapps：实例的部署目录
-	work：实例的缓存目录，应用的jsp编程class均在该目录下
+	work：实例的缓存目录，应用的jsp文件编译得到的class均在该目录下
 	wtpwebapps：
