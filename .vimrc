@@ -6,3 +6,4 @@ set hlsearch
 set fileencodings=ucs-bom,utf-8,chinese,default,latin1
 set ruler
 set ignorecase
+set incsearch
