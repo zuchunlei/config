@@ -8,3 +8,5 @@ set ruler
 set ignorecase
 set incsearch
 set showcmd
+set laststatus=2
+set scrolloff=3
