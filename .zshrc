@@ -28,3 +28,6 @@ setopt PUSHD_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
 bindkey ' ' magic-space
+
+# 设置当前终端配色方案
+export TERM="screen-256color"
