@@ -1,4 +1,5 @@
 set nu
+set relativenumber
 set cursorline
 set nobackup
 set nowritebackup
