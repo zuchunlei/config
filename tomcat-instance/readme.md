@@ -1,5 +1,5 @@
 ## 基于tomcat的单media多instance的配置模板说明
-
+***
 **mdeida**指[tomcat](http://tomcat.apache.org/)的安装介质，表现为*文件系统的一组目录与文件。*
 
 **instance**指[tomcat](http://tomcat.apache.org/)的启动实例，表现为*操作系统的一个进程与一组服务端口。*
