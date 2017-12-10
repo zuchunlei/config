@@ -1,12 +1,12 @@
-##基于tomcat的单media多instance的配置模板说明。##
-
+## 基于tomcat的单media多instance的配置模板说明
+***
 **mdeida**指[tomcat](http://tomcat.apache.org/)的安装介质，表现为*文件系统的一组目录与文件。*
 
 **instance**指[tomcat](http://tomcat.apache.org/)的启动实例，表现为*操作系统的一个进程与一组服务端口。*
 
 当需要多个tomcat的实例的时候均可使用该部署方式。
 
-###template目录说明:###
+### template目录说明:
 
 > + bin：实例的启动脚本以及关闭脚本
 > + config：实例的配置目录，其中server.xml为该实例的主配置文件

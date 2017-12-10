@@ -1,4 +1,5 @@
 set nu
+set relativenumber
 set cursorline
 set nobackup
 set nowritebackup
@@ -10,6 +11,8 @@ set incsearch
 set showcmd
 set laststatus=2
 set scrolloff=3
+set hidden
+set wildmenu
 colorscheme desert
 hi CursorLineNr ctermfg=208 ctermbg=236 cterm=none
 hi LineNr ctermfg=250 ctermbg=236
