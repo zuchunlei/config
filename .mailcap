@@ -1,0 +1,2 @@
+#text html
+text/html; w3m -dump -ppc 9 -I %{charset} -T text/html %s|uniq; copiousoutput
