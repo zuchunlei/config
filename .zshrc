@@ -43,3 +43,14 @@ export LESS_TERMCAP_us=$'\E[04;34;47;146m' # begin underline
 
 # 设置X服务地址
 export DISPLAY=192.168.124.1:0.0
+
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+        args=$*
+        tmux rename-window "${args#*@}"
+        command ssh "$@"
+        tmux set-window-option automatic-rename "on" 1>/dev/null
+    else
+        command ssh "$@"
+    fi
+}
