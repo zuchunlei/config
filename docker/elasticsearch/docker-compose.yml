@@ -1,0 +1,35 @@
+version: "3.5"
+services:
+  elasticsearch:
+    image: elasticsearch:6.5.4
+    restart: always
+    container_name: elasticsearch
+    hostname: elasticsearch
+    tty: true
+    environment:
+      TZ: Asia/Shanghai 
+    ports:
+      - 9200:9200
+    volumes:
+      - ./esconfig/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    networks:
+      - gateway
+  elasticsearch-head:
+    image: mobz/elasticsearch-head:5-alpine
+    restart: always
+    container_name: elasticsearch-head
+    hostname: elasticsearch-head
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 9100:9100
+    volumes:
+      - ./esconfig/vendor.js:/usr/src/app/_site/vendor.js
+    networks:
+      - gateway
+
+
+networks:
+  gateway:
+    external: true
