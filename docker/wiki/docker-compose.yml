@@ -1,0 +1,37 @@
+version: '3.5'
+
+services:
+  wiki-db:
+    image: postgres:11-alpine
+    hostname: wiki-db
+    container_name: wiki-db
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: wiki
+      POSTGRES_USER: wikijs
+    logging:
+      driver: "none"
+    restart: unless-stopped
+    volumes:
+      - ./data:/www/server/pgsql/data
+
+  wiki:
+    image: requarks/wiki:2.4
+    depends_on:
+      - wiki-db
+    hostname: wiki
+    container_name: wiki
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: wiki-db
+      DB_PORT: 5432
+      DB_USER: wikijs
+      DB_PASS: wiki
+      DB_NAME: wiki
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+networks:
+  default:
+    external:
+      name: gateway

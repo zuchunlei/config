@@ -1,0 +1,14 @@
+version: "3"
+services:
+  gogs:
+    container_name: gogs
+    image: gogs/gogs
+    volumes:
+      - ./data/gogs/:/data
+    restart: always
+    ports:
+      - 3000:3000
+networks:
+  default:
+    external:
+      name: gateway

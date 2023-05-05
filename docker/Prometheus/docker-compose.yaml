@@ -1,0 +1,20 @@
+version: "3.1"
+services:
+  prometheus:
+    restart: always
+    image: prom/prometheus
+    container_name: prometheus
+    tty: true
+    ports:
+      - 9090:9090
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - ./prometheus.yml:/opt/prometheus/prometheus.yml
+    command:
+      - --config.file=/opt/prometheus/prometheus.yml
+
+networks:
+  default:
+    external:
+      name: gateway

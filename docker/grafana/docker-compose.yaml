@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  grafana:
+    restart: always
+    image: grafana/grafana
+    container_name: grafana
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 30000:3000
+
+networks:
+  default:
+    external:
+      name: gateway

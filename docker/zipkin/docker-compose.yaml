@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  zipkin:
+    restart: always
+    image: openzipkin/zipkin
+    container_name: zipkin
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 9410:9410
+      - 9411:9411
+
+networks:
+  default:
+    external:
+      name: gateway

@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  eagle:
+    restart: always
+    # image: mysql:8.0.16
+    image: rottenleaf/kafka-eagle:2.0.3
+    container_name: kafka-eagle
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 8048:8048
+    volumes:
+      - ./conf/system-config.properties:/kafka-eagle/conf/system-config.properties
+
+networks:
+  default:
+    external:
+      name: gateway

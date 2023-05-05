@@ -1,0 +1,8 @@
+2021/08/26 05:47:40 gogs.io/gogs/internal/db/users.go:93 record not found
+[13.359ms] [rows:0] SELECT * FROM `user` WHERE email = "zuchunlei@outlook.com" ORDER BY `user`.`id` LIMIT 1
+2021/08/26 05:47:46 gogs.io/gogs/internal/db/users.go:93 record not found
+[2.433ms] [rows:0] SELECT * FROM `user` WHERE email = "zuchunlei@outlook.com" ORDER BY `user`.`id` LIMIT 1
+2021/08/26 05:48:08 gogs.io/gogs/internal/db/users.go:93 record not found
+[2.213ms] [rows:0] SELECT * FROM `user` WHERE email = "zuchunlei@outlook.com" ORDER BY `user`.`id` LIMIT 1
+2021/08/26 05:48:18 gogs.io/gogs/internal/db/users.go:93 record not found
+[4.436ms] [rows:0] SELECT * FROM `user` WHERE lower_name = "admin" ORDER BY `user`.`id` LIMIT 1

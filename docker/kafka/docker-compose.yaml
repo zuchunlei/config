@@ -1,0 +1,25 @@
+version: "3.1"
+services:
+  kafka1:
+    restart: always
+    image:  wurstmeister/kafka
+    container_name: kafka
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181/kafka
+      - KAFKA_BROKER_ID=1
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_LOG_DIRS=/kafka/kakfa-logs-data
+    ports:
+      - 9092:9092
+    volumes:
+      - ./data:/kafka
+
+networks:
+  default:
+    external:
+      name: gateway

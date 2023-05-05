@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  nginx-lua:
+    restart: always
+    image: danday74/nginx-lua
+    container_name: nginx-lua
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+      ZBS: /nginx/zbstudio
+    ports:
+      - 80:80
+    volumes:
+      - ./content:/nginx/content
+      - ./config/nginx.conf:/nginx/conf/nginx.conf
+      - ./zbstudio:/nginx/zbstudio
+

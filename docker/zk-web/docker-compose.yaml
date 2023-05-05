@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  zk-client:
+    restart: always
+    image: goodguide/zk-web 
+    container_name: zk-web
+    tty: true
+    environment:
+      TZ: Asia/Shangha
+    ports:
+      - 18080:8080
+networks:
+  default:
+    external:
+      name: gateway

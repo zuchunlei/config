@@ -1,0 +1,52 @@
+worker_processes 2;
+
+#error_log logs/error.log notice;
+#error_log logs/error.log info;
+
+events {
+    use epoll;
+    worker_connections 2048;
+}
+
+
+http {
+    include mime.types;
+    default_type application/octet-stream;
+
+    #log_format main '$remote_addr - $remote_user [$time_local] "$request" '
+    # '$status $body_bytes_sent "$http_referer" '
+    # '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log logs/access.log main;
+    sendfile on;
+    # tcp_nopush on;
+
+    keepalive_timeout 65;
+
+    # gzip压缩功能设置
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level 6;
+    gzip_vary on;
+
+    # http_proxy 设置
+    client_max_body_size 10m;
+    client_body_buffer_size 128k;
+    proxy_connect_timeout 75;
+    proxy_send_timeout 75;
+    proxy_read_timeout 75;
+    proxy_buffer_size 4k;
+    proxy_buffers 4 32k;
+    proxy_busy_buffers_size 64k;
+    proxy_temp_file_write_size 64k;
+
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+    ssl_prefer_server_ciphers on;
+
+
+    include /etc/nginx/config.d/*.conf;
+    ## 其它虚拟主机，server 指令开始
+    
+}

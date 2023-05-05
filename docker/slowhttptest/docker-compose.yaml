@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  redis:
+    restart: always
+    image: shekyan/slowhttptest
+    container_name: slowhttptest
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    entrypoint: sh
+networks:
+  default:
+    external:
+      name: gateway

@@ -1,0 +1,51 @@
+version: "3.1"
+services:
+  kafka1:
+    restart: always
+    image:  wurstmeister/kafka
+    container_name: kafka1
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka1
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_BROKER_ID=1
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_CREATE_TOPICS=pandas
+    ports:
+      - 9092:9092
+
+  kafka2:
+    restart: always
+    image:  wurstmeister/kafka
+    container_name: kafka2
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka2
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_BROKER_ID=2
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+
+  kafka3:
+    restart: always
+    image:  wurstmeister/kafka
+    container_name: kafka3
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka3
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_BROKER_ID=3
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+
+networks:
+  default:
+    external:
+      name: gateway

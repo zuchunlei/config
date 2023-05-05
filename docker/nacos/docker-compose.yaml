@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  nacos:
+    restart: always
+    image: nacos/nacos-server
+    container_name: nacos
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+      MODE: standalone
+    ports:
+      - 8848:8848
+
+networks:
+  default:
+    external:
+      name: gateway

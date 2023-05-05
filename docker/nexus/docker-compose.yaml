@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  mysql:
+    restart: always
+    image: sonatype/nexus
+    hostname: nexus
+    container_name: nexus
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - E:\compose\nexus\data:/nexus-data
+networks:
+  default:
+    external:
+      name: gateway

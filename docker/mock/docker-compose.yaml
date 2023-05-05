@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  mock:
+    restart: always
+    image: jcdemo/flaskapp
+    container_name: mock
+    tty: true
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 5000:5000
+    volumes:
+      - ./mock.py:/src/mock.py
+    entrypoint:
+      - python
+      - /src/mock.py
+

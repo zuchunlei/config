@@ -1,0 +1,10 @@
+2021/11/19 01:35:04 gogs.io/gogs/internal/db/users.go:93
+[warn] Model gogs.io/gogs/internal/db.User don't match BeforeUpdateInterface, should be BeforeUpdate(*gorm.DB)
+2021/11/19 01:35:04 gogs.io/gogs/internal/db/users.go:93 record not found
+[3.089ms] [rows:0] SELECT * FROM `user` WHERE email = "zuchunlei@outlook.com" ORDER BY `user`.`id` LIMIT 1
+2021/11/19 01:35:09 gogs.io/gogs/internal/db/users.go:93 record not found
+[2.210ms] [rows:0] SELECT * FROM `user` WHERE email = "zuchunlei@outlook.com" ORDER BY `user`.`id` LIMIT 1
+2021/11/19 01:35:12 gogs.io/gogs/internal/db/users.go:93 record not found
+[2.687ms] [rows:0] SELECT * FROM `user` WHERE email = "zuchunlei@outlook.com" ORDER BY `user`.`id` LIMIT 1
+2021/11/19 01:35:17 gogs.io/gogs/internal/db/users.go:93 record not found
+[2.211ms] [rows:0] SELECT * FROM `user` WHERE email = "zuchunlei@outlook.com" ORDER BY `user`.`id` LIMIT 1

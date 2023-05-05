@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+  zookeeper:
+    restart: always
+    image:  wurstmeister/zookeeper
+    container_name: zookeeper
+    tty: true
+    environment:
+      TZ: Asia/Shangha
+    ports:
+      - 2181:2181
+    volumes:
+      - ./data:/opt/zookeeper-3.4.13/data 
+
+networks:
+  default:
+    external:
+      name: gateway

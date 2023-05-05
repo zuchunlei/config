@@ -1,0 +1,13 @@
+version: "3.1"
+services:
+  rabbitmq-management:
+    restart: always
+    image: rabbitmq:management 
+    container_name: rabbitmq-management
+    tty: true
+    environment:
+      TZ: Asia/Shangha
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    ports:
+      - 15672:15672
